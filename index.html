@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 
   <!-- Page Info -->
-  <title>Home</title>
+  <title>Susy</title>
   <meta name="description" content="Custom layout engine for Sass" />
 
   <!-- Site Info -->
@@ -39,12 +39,55 @@
 </head>
 <body id="susy" class="">
   
-<header role="banner">
-  <h1>
-    <a href="http://susy.oddbird.net/">Susy</a>
-  </h1>
-  <h2>Your Layout / Our Math</h2>
+
+
+<header role="banner" class="h-card">
+  <a href="http://susy.oddbird.net/" rel="home" class="p-url">
+    
+<span data-icon="logo" aria-hidden="true"> </span>
+<span class="a11y-hidden">Home</span>
+
+  </a>
+  <h1 class="p-name p-org">Susy</h1>
+  <h2 class="p-role">Your layout, our math.</h2>
 </header>
+
+
+<nav role="navigation">
+  
+  <a href="http://susydocs.oddbird.net/" data-nav="Documentation">
+    
+<span data-icon="list" aria-hidden="true"> </span>
+
+
+    <span>Documentation</span>
+  </a>
+  
+  <a href="http://stackoverflow.com/questions/tagged/susy-compass" data-nav="Support">
+    
+<span data-icon="stackoverflow" aria-hidden="true"> </span>
+
+
+    <span>Support</span>
+  </a>
+  
+  <a href="http://github.com/ericam/susy/" data-nav="Source">
+    
+<span data-icon="github" aria-hidden="true"> </span>
+
+
+    <span>Source</span>
+  </a>
+  
+  <a href="http://twitter.com/sasssusy/" data-nav="Twitter">
+    
+<span data-icon="twitter" aria-hidden="true"> </span>
+
+
+    <span>Twitter</span>
+  </a>
+  
+</nav>
 
 <main role="main">
   
@@ -54,13 +97,14 @@
   <p>Hello&nbsp;World!</p>
 
 
-  
-
 
 </main>
 
 <footer role="contentinfo">
-  Copyright &copy; 2013 Eric A. Meyer
+  <p class="licence">
+    Copyright &copy; 2013
+    <a href="http://eric.andmeyer.com/">Eric A. Meyer</a>
+  </p>
 </footer>
 
 </body>
