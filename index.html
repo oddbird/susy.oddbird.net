@@ -14,7 +14,6 @@
   <meta name="language" content="en-us" />
 
   <link href="/feed.atom" rel="alternate" title="Feed" type="application/atom+xml">
-    <link rel="stylesheet" href="/static/_pygments.css" type="text/css">
 
   <!-- Microformat Profiles -->
   <!-- hCard, hCalendar, rel-license, rel-tag, XOXO, XFN, VoteLinks -->
@@ -39,7 +38,8 @@
 </head>
 <body id="susy" class="">
   
-
+<div class="head">
+  
 
 <header role="banner" class="h-card">
   <a href="http://susy.oddbird.net/" rel="home" class="p-url">
@@ -49,63 +49,196 @@
 
   </a>
   <h1 class="p-name p-org">Susy</h1>
-  <h2 class="p-role">Your layout, our math.</h2>
+  <h2 class="p-role">your layout | <em>our math</em></h2>
 </header>
-
+  
 
 <nav role="navigation">
-  
-  <a href="http://susydocs.oddbird.net/" data-nav="Documentation">
+  <input type="checkbox" id="toggle-nav" aria-hidden="true">
+  <label for="toggle-nav" data-icon="menu" aria-hidden="true"> </label>
+
+  <div class="nav-content">
     
+    <a href="http://susydocs.oddbird.net/" data-nav="Documentation">
+      
 <span data-icon="list" aria-hidden="true"> </span>
 
 
-    <span>Documentation</span>
-  </a>
-  
-  <a href="http://stackoverflow.com/questions/tagged/susy-compass" data-nav="Support">
+      <span>Documentation</span>
+    </a>
     
+    <a href="http://stackoverflow.com/questions/tagged/susy-compass" data-nav="Support">
+      
 <span data-icon="stackoverflow" aria-hidden="true"> </span>
 
 
-    <span>Support</span>
-  </a>
-  
-  <a href="http://github.com/ericam/susy/" data-nav="Source">
+      <span>Support</span>
+    </a>
     
+    <a href="http://github.com/ericam/susy/" data-nav="Source">
+      
 <span data-icon="github" aria-hidden="true"> </span>
 
 
-    <span>Source</span>
-  </a>
-  
-  <a href="http://twitter.com/sasssusy/" data-nav="Twitter">
+      <span>Source</span>
+    </a>
     
+    <a href="http://twitter.com/sasssusy/" data-nav="Twitter">
+      
 <span data-icon="twitter" aria-hidden="true"> </span>
 
 
-    <span>Twitter</span>
-  </a>
-  
+      <span>Twitter</span>
+    </a>
+    
+  </div>
 </nav>
+</div>
 
+<div class="content">
 <main role="main">
   
+  <h1 class="title">Power tools for the web</h1>
+
 
   
 
-  <p>Hello&nbsp;World!</p>
+  <div class="section" id="no-opinions">
+<h2>No&nbsp;Opinions</h2>
+<p>In a world of agile development
+and super-tablet-multi-magic-lap-phones,
+the best layouts can&#8217;t be contained
+in a single framework, grid system, or technique.
+You can&#8217;t build an entire house with a single hammer.
+You need a full belt,
+with tools that respond to all your needs.
+Susy combines all the common layout patterns
+into one flexible syntax,
+so each approach is available when you need&nbsp;it.</p>
+<p><em>Stop letting the table-saw tell you where to put the&nbsp;kitchen.</em></p>
+</div>
+<div class="section" id="rapid-prototypes-rapid-production">
+<h2>Rapid Prototypes, Rapid&nbsp;Production</h2>
+<p>We know that rapid prototypes
+are only the start to a long process
+of development, changes, handoffs, and&nbsp;maintanance.</p>
+<p>Get started quickly
+with Susy&#8217;s flexible <tt class="docutils literal">span</tt> mixin:</p>
+<div class="highlight"><pre><span class="nt">nav</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> span</span><span class="p">(</span><span class="mi">25</span><span class="kt">%</span><span class="p">);</span> <span class="p">}</span>
+<span class="nt">main</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> span</span><span class="p">(</span><span class="mi">75</span><span class="kt">%</span><span class="p">);</span> <span class="p">}</span>
+</pre></div>
+<p>Then stick around for fully customizable&nbsp;grids:</p>
+<div class="highlight"><pre><span class="nv">$susy</span><span class="o">:</span> <span class="p">(</span>
+  <span class="n">columns</span><span class="o">:</span> <span class="mi">12</span><span class="o">,</span>
+  <span class="n">gutter-position</span><span class="o">:</span> <span class="no">inside</span><span class="o">,</span>
+  <span class="n">math</span><span class="o">:</span> <span class="n">fluid</span><span class="o">,</span>
+  <span class="n">output</span><span class="o">:</span> <span class="no">float</span><span class="o">,</span>
+  <span class="n">flow</span><span class="o">:</span> <span class="n">rtl</span><span class="o">,</span>
+<span class="p">);</span>
+</pre></div>
+<p>And take complete control when you need&nbsp;it:</p>
+<div class="highlight"><pre><span class="nt">nav</span> <span class="p">{</span>
+  <span class="na">float</span><span class="o">:</span> <span class="no">left</span><span class="p">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="nf">span</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+  <span class="na">margin-right</span><span class="o">:</span> <span class="nf">gutter</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nt">main</span> <span class="p">{</span>
+  <span class="k">@include</span><span class="nd"> span</span><span class="p">(</span><span class="n">isolate</span> <span class="mi">9</span> <span class="n">at</span> <span class="mi">4</span> <span class="n">no-gutters</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="in-the-wild">
+<h2>In The&nbsp;Wild</h2>
+<div class="gallery container">
+<a class="reference external image-reference" href="http://sass-lang.com"><img alt="http://sass-lang.com" src="/static/screenshots/sasslang.jpg" /></a>
+<a class="reference external image-reference" href="http://squareup.com/market"><img alt="http://squareup.com/market" src="/static/screenshots/squaremarket.jpg" /></a>
+<a class="reference external image-reference" href="http://slickbag.se/"><img alt="http://slickbag.se/" src="/static/screenshots/slickbag.jpg" /></a>
+<a class="reference external image-reference" href="http://avoidpaydayloans.com/"><img alt="http://avoidpaydayloans.com/" src="/static/screenshots/avoidpaydayloans.jpg" /></a>
+<a class="reference external image-reference" href="http://www.viggle.com/"><img alt="http://www.viggle.com/" src="/static/screenshots/viggle.jpg" /></a>
+<a class="reference external image-reference" href="http://turnitresponsive.com/"><img alt="http://turnitresponsive.com/" src="/static/screenshots/turnitresponsive.jpg" /></a>
+<div class="gallery-caption container">
+See more <a class="reference external" href="/sites-using-susy/">sites using Susy</a>,
+or <a class="reference external" href="https://github.com/ericam/susysite/tree/master/content/sites-using-susy.rst">add your own</a> »</div>
+</div>
+</div>
+<div class="section" id="better-together">
+<h2>Better&nbsp;Together</h2>
+<p><em>Responsive Design</em> —
+Susy integrates smoothly with <a class="reference external" href="http://breakpoint-sass.com">Breakpoint</a>
+with powerul media-query controls
+for responsive layouts.
+See the <a class="reference external" href="http://susydocs.oddbird.net/">documentation</a> for&nbsp;details.</p>
+<p><em>Vertical Rhythms</em> —
+If you&#8217;re using the <a class="reference external" href="http://compass-style.org/">Compass</a>
+vertical rhythms module,
+we give you controls to show/hide your basline
+along with any Susy grids you&#8217;ve&nbsp;defined.</p>
+<p><em>Package Managers</em> —
+We love <a class="reference external" href="http://compass-style.org/">Compass</a> and highly recommend it,
+but you can use Susy anywhere <a class="reference external" href="http://sass-lang.com/">Sass</a> is compiled.
+Susy plays well with <a class="reference external" href="http://bundler.io/">Bundler</a>, <a class="reference external" href="http://bower.io/">Bower</a>/<a class="reference external" href="http://yeoman.io/">Yeoman</a>, and <a class="reference external" href="http://bourbon.io/">Bourbon</a>,
+or copied into your sass&nbsp;directory.</p>
+</div>
+<div class="section" id="community-effort">
+<h2>Community&nbsp;Effort</h2>
+<p>Susy was originaly based on Natalie Downe&#8217;s <a class="reference external" href="http://tsi.github.io/Salsa/"><span class="caps">CSS</span> Systems</a>,
+and then pushed and proded by the community
+to become something larger.
+Along the way,
+projects have split off
+with their own interesting ideas.
+We hope to keep that conversation&nbsp;going.</p>
+<p>For Susy 2.0,
+we merged with the <a class="reference external" href="http://tsi.github.io/Salsa/">Salsa</a> project,
+and borrowed additional ideas from
+<a class="reference external" href="http://singularity.gs/">Singularity</a>, <a class="reference external" href="http://next.zengrids.com/">Zen Grids</a>, and elsewhere,
+to create a more flexible layout language,
+with all the tools in one belt.
+We&#8217;d love to <a class="reference external" href="http://github.com/ericam/susy/issues">hear your ideas</a> as well.
+Questions, suggestions, pull requests,
+and plugins are always&nbsp;welcome.</p>
+</div>
 
 
 
 </main>
+</div>
 
-<footer role="contentinfo">
-  <p class="licence">
-    Copyright &copy; 2013
-    <a href="http://eric.andmeyer.com/">Eric A. Meyer</a>
+<div class="foot">
+  <footer role="contentinfo">
+  <p class="credit">
+    <b class="license">
+      Copyright &copy; 2013
+      <a href="http://eric.andmeyer.com/">Eric A. Meyer</a>
+    </b>
+
+    Major contributions from
+    <a href="http://twitter.com/shlidor">Tsachi Schlidor</a>,
+    <a href="http://twitter.com/mragray">Aaron Gray</a>,
+    <a href="http://twitter.com/snugug">Sam Richard</a>,
+    <a href="http://twitter.com/ScottKullum">Scott Kellum</a>,
+    and
+    <a href="https://github.com/ericam/susy/graphs/contributors">many&nbsp;others</a>.
+  </p>
+  <p class="colophon">
+    This site was built with HTML5 and CSS3,
+    using
+    <a href="http://github.com/mitsuhiko/rstblog/">rstBlog</a>,
+    <a href="http://www.python.org/">Python</a>,
+    <a href="http://jinja.pocoo.org/">Jinja</a>,
+    <a href="http://compass-style.org/">Compass</a>,
+    <a href="http://sass-lang.com">Sass</a>,
+    <a href="http://susy.oddbird.net">Susy</a>,
+    <a href="http://breakpoint-sass.com">Breakpoint</a>,
+    <a href="http://github.com/Team-Sass/modular-scale">Modular Scale</a>,
+    <a href="http://pygments.org/">Pygments</a>,
+    <a href="http://icomoon.io">IcoMoon</a>,
+    <a href="https://github.com/adobe/source-sans-pro">Source Sans Pro</a>,
+    and <a href="https://github.com/adobe/source-code-pro">Source&nbsp;Code&nbsp;Pro</a>.
   </p>
 </footer>
+</div>
 
 </body>
 </html>
