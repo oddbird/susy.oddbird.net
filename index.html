@@ -67,6 +67,14 @@
       <span>Documentation</span>
     </a>
     
+    <a href="/demos/" data-nav="Tutorials">
+      
+<span data-icon="direction" aria-hidden="true"> </span>
+
+
+      <span>Tutorials</span>
+    </a>
+    
     <a href="http://stackoverflow.com/questions/tagged/susy-compass" data-nav="Support">
       
 <span data-icon="stackoverflow" aria-hidden="true"> </span>
@@ -106,24 +114,23 @@
   <section id="no-opinions">
 <h2>No&nbsp;Opinions</h2>
 <p>In a world of agile development
-and super-tablet-multi-magic-lap-phones,
+and super-tablet-multi-magic-laptop-phones,
 the best layouts can&#8217;t be contained
-in a single framework, grid system, or technique.
-You can&#8217;t build an entire house with a single hammer.
-You need a full belt,
-with tools that respond to all your needs.
-Susy combines all the common layout patterns
-into one flexible syntax,
-so each approach is available when you need&nbsp;it.</p>
-<p><em>Stop letting the table-saw tell you where to put the&nbsp;kitchen.</em></p>
+in a single framework or technique.
+<span class="caps">CSS</span> Libraries are a bloated mess of opinions
+about how to do your job.
+Stop letting the table-saw tell you where to put the&nbsp;kitchen.</p>
+<p><em>You draw the blueprints,
+we&#8217;ll do the heavy&nbsp;lifting.</em></p>
 </section>
 <section id="rapid-prototypes-rapid-production">
 <h2>Rapid Prototypes, Rapid&nbsp;Production</h2>
 <p>We know that rapid prototypes
 are only the start to a long process
-of development, changes, handoffs, and&nbsp;maintanance.</p>
+of development, changes, handoffs, and maintanance.
+Susy is built for the long&nbsp;haul.</p>
 <p>Get started quickly
-with Susy&#8217;s flexible <code>span</code> mixin:</p>
+with the flexible <code>span</code> mixin:</p>
 <div class="highlight"><pre><span class="nt">nav</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> span</span><span class="p">(</span><span class="mi">25</span><span class="kt">%</span><span class="p">);</span> <span class="p">}</span>
 <span class="nt">main</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> span</span><span class="p">(</span><span class="mi">75</span><span class="kt">%</span><span class="p">);</span> <span class="p">}</span>
 </pre></div>
@@ -136,7 +143,8 @@ with Susy&#8217;s flexible <code>span</code> mixin:</p>
   <span class="n">flow</span><span class="o">:</span> <span class="n">rtl</span><span class="o">,</span>
 <span class="p">);</span>
 </pre></div>
-<p>And take complete control when you need&nbsp;it:</p>
+<p>And take complete control of the math
+when you need&nbsp;it:</p>
 <div class="highlight"><pre><span class="nt">nav</span> <span class="p">{</span>
   <span class="na">float</span><span class="o">:</span> <span class="no">left</span><span class="p">;</span>
   <span class="na">width</span><span class="o">:</span> <span class="nf">span</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -158,7 +166,7 @@ with Susy&#8217;s flexible <code>span</code> mixin:</p>
 <a class="reference external image-reference" href="http://www.viggle.com/"><img alt="http://www.viggle.com/" src="/static/screenshots/viggle.jpg" /></a>
 <a class="reference external image-reference" href="http://turnitresponsive.com/"><img alt="http://turnitresponsive.com/" src="/static/screenshots/turnitresponsive.jpg" /></a>
 <figcaption class="gallery-caption">
-See more <a class="reference external" href="/sites-using-susy/">sites using Susy</a>,
+See more <a class="reference external" href="/sites-using-susy/#everyone">sites using Susy</a>,
 or <a class="reference external" href="https://github.com/ericam/susysite/tree/master/content/sites-using-susy.rst">add your own</a> »</figcaption>
 </figure>
 </section>
@@ -213,17 +221,22 @@ and plugins are always&nbsp;welcome.</p>
       <a href="http://eric.andmeyer.com/">Eric A. Meyer</a>
     </b>
 
-    Major contributions from
+    with major contributions from
     <a href="http://twitter.com/shlidor">Tsachi Schlidor</a>,
     <a href="http://twitter.com/mragray">Aaron Gray</a>,
     <a href="http://twitter.com/snugug">Sam Richard</a>,
-    <a href="http://twitter.com/ScottKullum">Scott Kellum</a>,
+    <a href="http://twitter.com/scottkellum">Scott Kellum</a>,
+    <a href="http://twitter.com/rachelnabors">Rachel Nabors</a>,
+    <a href="http://twitter.com/jina">Jina Bolton</a>,
+    <a href="http://twitter.com/dannyprose">Danny Palmer</a>,
+    <a href="http://twitter.com/codingdesigner">Mason Wendell</a>,
     and
     <a href="https://github.com/ericam/susy/graphs/contributors">many&nbsp;others</a>.
   </p>
   <p class="colophon">
-    This site was built with HTML5 and CSS3,
-    using
+    Built with HTML5 and CSS3,
+    with
+    <a href="https://github.com/ericam/susysite">GitHub</a>,
     <a href="http://github.com/mitsuhiko/rstblog/">rstBlog</a>,
     <a href="http://www.python.org/">Python</a>,
     <a href="http://jinja.pocoo.org/">Jinja</a>,
@@ -231,11 +244,11 @@ and plugins are always&nbsp;welcome.</p>
     <a href="http://sass-lang.com">Sass</a>,
     <a href="http://susy.oddbird.net">Susy</a>,
     <a href="http://breakpoint-sass.com">Breakpoint</a>,
-    <a href="http://github.com/Team-Sass/modular-scale">Modular Scale</a>,
     <a href="http://pygments.org/">Pygments</a>,
     <a href="http://icomoon.io">IcoMoon</a>,
     <a href="https://github.com/adobe/source-sans-pro">Source Sans Pro</a>,
-    and <a href="https://github.com/adobe/source-code-pro">Source&nbsp;Code&nbsp;Pro</a>.
+    and
+    <a href="https://github.com/adobe/source-code-pro">Source&nbsp;Code&nbsp;Pro</a>.
   </p>
 </footer>
 </div>
