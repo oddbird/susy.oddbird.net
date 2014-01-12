@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 
   <!-- Page Info -->
-  <title>Grid Types [Susy One] | Susy</title>
+  <title>Susy</title>
   <meta name="description" content="Custom layout engine for Sass" />
 
   <!-- Site Info -->
@@ -31,8 +31,8 @@
   <!-- Styles -->
   
   
-  <link rel="stylesheet" href="/static/css/screen.css" />
-  
+    <link rel="stylesheet" href="/static/css/demos/demos.css">
+    <link rel="stylesheet" href="/static/css/demos/grid-types.css">
   
 
 </head>
@@ -42,7 +42,7 @@
   
 
 <header role="banner" class="h-card">
-  <a href="http://susy.oddbird.net/" rel="home" class="p-url">
+  <a href="/" rel="home" class="p-url">
     
 <span data-icon="logo" aria-hidden="true"> </span>
 <span class="a11y-hidden">Home</span>
@@ -106,17 +106,186 @@
 <div class="content">
 <main role="main">
   
-  <h1 class="title">Grid Types [Susy One]</h1>
+  <h1 class="title">Different Grid Types</h1>
 
-
-  
-
-  <p><span></span></p>
-<section id="legacy-tutorial">
-<h2>Legacy&nbsp;Tutorial</h2>
-<p>Coming&nbsp;soon&#8230;</p>
+  <section id="customizing-susy">
+<h2>Customizing&nbsp;Susy</h2>
+<p>You can build grids of all kinds with Susy.
+Define your grid using any unit of measurement
+(ems, pixels, percentages, inches, etc.)
+and then determine how and when
+you want that grid to respond to the&nbsp;viewport.</p>
+<p>By default,
+Susy converts all internal grid-widths into percentages
+with an outer container set in the units you choose,
+but you can override that to generate grids in any unit you&nbsp;like.</p>
+<p>Here are a few examples
+of grids with different container&nbsp;styles.</p>
 </section>
+<section id="the-magic-grid">
+<h2>The Magic&nbsp;Grid</h2>
+<aside class="demo magic-container">
+  <h3>.magic-container</h3>
+  <p>
+    10 columns,
+    4em width,
+    1em gutters,
+    1em padding.&nbsp;Magic.
+  </p>
+</aside><p>The default grid in Susy is what I call &#8220;the magic grid&#8221;.
+Fluid on the inside,
+with an elastic container max-width.
+The em-width makes it responsive to font sizes,
+while the max-width setting makes it responsive to window&nbsp;sizes.</p>
+<div class="highlight"><pre><span class="c1">// Setting up the Magic Grid</span>
+<span class="na">$total-columns</span><span class="o">:</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 10 columns</span>
+<span class="na">$column-width</span><span class="o">:</span> <span class="mi">4</span><span class="kt">em</span><span class="p">;</span> <span class="c1">// columns are 4em wide</span>
+<span class="na">$gutter-width</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span> <span class="c1">// with 1em gutters</span>
+<span class="na">$grid-padding</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span> <span class="c1">// and 1em padding on the grid container</span>
 
+<span class="nc">.magic-container</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> container</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+<p>What we&#8217;ve defined is a simple elastic grid,
+but by default the outer container width
+will be set as a max-width,
+making this a magic&nbsp;grid.</p>
+<p>You can also have px-based magic grids,
+and so on,
+though I find them somewhat less magical.
+What makes it a magic grid
+is the fact that it collapses with the browser at smaller sizes,
+but remains set-width at larger&nbsp;sizes.</p>
+<p>There is a more complete
+<a class="reference external" href="/demos/magic/">mobile-first magic grid demo</a>
+if you are&nbsp;interested.</p>
+</section>
+<section id="the-fluid-grid">
+<h2>The Fluid&nbsp;Grid</h2>
+<aside class="demo fluid-container">
+  <h3>.fluid-container</h3>
+  <p>
+    12 columns,
+    60px initial width,
+    20px initial gutters,
+    10px initial padding.&nbsp;Fluid.
+  </p>
+</aside><p>There are many ways to build a fluid grid with Susy.
+You could simply replace all the em-widths above
+with percentage widths.
+But that&#8217;s actually the hard way,
+unless you know exactly what percentages you want to use.
+Let me show you some easier&nbsp;options.</p>
+<p>Say you want to build a fluid grid
+based on the <a class="reference external" href="http://960.gs/">960gs</a>&nbsp;dimensions:</p>
+<div class="highlight"><pre><span class="c1">// A Fluid Grid based on 960gs</span>
+<span class="na">$total-columns</span><span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
+<span class="na">$column-width</span><span class="o">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+<span class="na">$gutter-width</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="na">$grid-padding</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</pre></div>
+<p>That&#8217;s a good start.
+We now have a 960px magic grid.
+Turning that into a fluid grid is&nbsp;simple:</p>
+<div class="highlight"><pre><span class="c1">// Make it fluid!</span>
+<span class="na">$container-style</span><span class="o">:</span> <span class="n">fluid</span><span class="p">;</span>
+
+<span class="nc">.fluid-container</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> container</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+<p>That&#8217;s it.
+You have a fluid grid
+based on the dimensions of the 960gs.
+By default the fluid container is set to 100% width,
+but you can override that as&nbsp;well:</p>
+<div class="highlight"><pre><span class="c1">// Make it smaller</span>
+<span class="na">$container-width</span><span class="o">:</span> <span class="mi">80</span><span class="kt">%</span><span class="p">;</span>
+</pre></div>
+</section>
+<section id="the-static-grid">
+<h2>The Static&nbsp;Grid</h2>
+<aside class="demo static-container">
+  <h3>.static-container</h3>
+  <p>
+    10 columns,
+    4em width,
+    1em gutters,
+    1em padding.&nbsp;Static.
+  </p>
+</aside><p>Perhaps you don&#8217;t want your grid to respond
+to the size of the viewport at all.
+By telling Susy you want a &#8220;static&#8221; grid,
+Susy will apply your container-width
+directly to the &#8220;width&#8221;&nbsp;property.</p>
+<p>This is your more standard grid type.
+Most &#8220;elastic&#8221; and &#8220;fixed&#8221; grids fit this category.
+Unlike the magic grid, it doesn&#8217;t&nbsp;collapse.</p>
+<p>Let&#8217;s take our first grid and make it&nbsp;static:</p>
+<div class="highlight"><pre><span class="c1">// Setting up the Static Grid</span>
+<span class="na">$total-columns</span><span class="o">:</span> <span class="mi">10</span><span class="p">;</span>
+<span class="na">$column-width</span><span class="o">:</span> <span class="mi">4</span><span class="kt">em</span><span class="p">;</span>
+<span class="na">$gutter-width</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+<span class="na">$grid-padding</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+
+<span class="na">$container-style</span><span class="o">:</span> <span class="no">static</span><span class="p">;</span>
+
+<span class="nc">.static-container</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> container</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</section>
+<section id="mixing-and-matching">
+<h2>Mixing and&nbsp;matching</h2>
+<p>Using those same 4 basic settings,
+and the two advanced override settings,
+you can create nearly any grid without doing any&nbsp;math.</p>
+<p>Want the 960 grid system
+updated to&nbsp;1140px?</p>
+<div class="highlight"><pre><span class="c1">// The 960gs in 1140px</span>
+<span class="na">$total-columns</span><span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
+<span class="na">$column-width</span><span class="o">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+<span class="na">$gutter-width</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="na">$grid-padding</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="na">$container-style</span><span class="o">:</span> <span class="no">static</span><span class="p">;</span>
+<span class="na">$container-width</span><span class="o">:</span> <span class="mi">1140</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="nc">.larger-960-container</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> container</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+<p>Why not make it elastic and&nbsp;magic?</p>
+<div class="highlight"><pre><span class="c1">// The 960gs in ems</span>
+<span class="na">$total-columns</span><span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
+<span class="na">$column-width</span><span class="o">:</span> <span class="mi">60</span><span class="kt">px</span><span class="p">;</span>
+<span class="na">$gutter-width</span><span class="o">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="na">$grid-padding</span><span class="o">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+
+<span class="na">$container-style</span><span class="o">:</span> <span class="n">magic</span><span class="p">;</span>
+<span class="na">$container-width</span><span class="o">:</span> <span class="mi">60</span><span class="kt">em</span><span class="p">;</span>
+
+<span class="nc">.elastic-960-container</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> container</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+<p>Or we can make a magic-elastic grid,
+defined in&nbsp;percentages:</p>
+<div class="highlight"><pre><span class="c1">// Elastic grid as percentages</span>
+<span class="na">$total-columns</span><span class="o">:</span> <span class="mi">12</span><span class="p">;</span>
+<span class="na">$column-width</span><span class="o">:</span> <span class="mi">6</span><span class="kt">%</span><span class="p">;</span>
+<span class="na">$gutter-width</span><span class="o">:</span> <span class="mi">2</span><span class="kt">%</span><span class="p">;</span>
+<span class="na">$grid-padding</span><span class="o">:</span> <span class="mi">1</span><span class="kt">%</span><span class="p">;</span>
+
+<span class="na">$container-style</span><span class="o">:</span> <span class="n">magic</span><span class="p">;</span>
+<span class="na">$container-width</span><span class="o">:</span> <span class="mi">50</span><span class="kt">em</span><span class="p">;</span>
+
+<span class="nc">.elastic-percentage-container</span> <span class="p">{</span> <span class="k">@include</span><span class="nd"> container</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+<p>Play around.
+Start to add breakpoints,
+with different grids at different sizes,
+or just pick the grid best suited for your site:
+magic-elastic,
+magic-fixed,
+static-elastic,
+static-fixed,
+fluid,
+defined as one but displayed as another&#8230;
+The possibilities are endless.
+Have&nbsp;fun!</p>
+</section>
 
 
 </main>
