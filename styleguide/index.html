@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8" />
 
+  
+  <!-- Redirect the user to <new_url>-->
+  <meta http-equiv="refresh" content="0; url=http://oddbird.net/susy/styleguide/">
+  <!-- Make it know that <new_url> is the canonical URL -->
+  <link rel="canonical" href="http://oddbird.net/susy/styleguide/" />
+
+
   <!-- Page Info -->
   <title>Style Guide | Susy</title>
   <meta name="description" content="Custom layout engine for Sass" />
@@ -42,7 +49,7 @@
   
 
 </head>
-<body id="susy" class="">
+<body id="susy" class="" onload="window.location.replace('http://oddbird.net/susy/styleguide/')">
   
 <div class="head">
   
